@@ -43,10 +43,10 @@ def max_index(X):
         raise ValueError("Input must be a numpy array")
     if len(X.shape) != 2:
         raise ValueError("Input must be a 2D array")
-    for k in range(X.shape[0]):
-        for l in range(X.shape[1]):
-            if X[k, l] == np.max(X):
-                i, j = k, l
+    for row in range(X.shape[0]):
+        for col in range(X.shape[1]):
+            if X[row, col] == np.max(X):
+                i, j = row, col
 
     return i, j
 
@@ -73,4 +73,4 @@ def wallis_product(n_terms):
     pi = 1.0
     for i in range(1, n_terms + 1):
         pi *= (4 * i**2) / (4 * i**2 - 1)
-    return 2 * pi 
+    return 2 * pi
